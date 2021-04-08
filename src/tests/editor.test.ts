@@ -43,9 +43,9 @@ ModuleEditor.Module.createEditor = mockEditorCreation
 
 test('test install', () => {
 
-    let environment = new MockEnvironment({},[])
+    let environment = new MockEnvironment()
     pack.install(environment)
-    expect(MockEnvironment.css.length).toEqual(2)
+    expect(environment.css.length).toEqual(2)
 })
 
 
@@ -58,7 +58,7 @@ test('initialization', (done) => {
         editor: ModuleEditor.Module,
     } = instantiateModules({
         editor: ModuleEditor
-    }, {environment: new MockEnvironment({},[])}) 
+    }, {environment: new MockEnvironment()}) 
     let graph       = parseGraph( { branches, modules } )
     
     new Runner( graph )
@@ -88,7 +88,7 @@ test('editing text', (done) => {
         editor: ModuleEditor.Module,
     } = instantiateModules({
         editor: ModuleEditor
-    }, {environment: new MockEnvironment({},[])}) 
+    }, {environment: new MockEnvironment()}) 
     let graph       = parseGraph( { branches, modules } )
     
     new Runner( graph )
@@ -121,7 +121,7 @@ test('dynamic content', (done) => {
     } = instantiateModules({
         editor: ModuleEditor,
         dataEmittor: ModuleDataEmittor
-    }, {environment: new MockEnvironment({},[])}) 
+    }, {environment: new MockEnvironment()}) 
 
     let graph       = parseGraph( { branches, modules } )
     
