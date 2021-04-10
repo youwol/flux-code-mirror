@@ -67,8 +67,8 @@ test('initialization', (done) => {
     document.body.appendChild(div)
 
     renderTemplate(div, Object.values(modules))
-    expect(document.getElementById("editor").getAttribute('width')).toEqual("100%")
-    expect(document.getElementById("editor").getAttribute('height')).toEqual("100%")
+    expect(document.getElementById("editor").style.getPropertyValue('width')).toEqual("100%")
+    expect(document.getElementById("editor").style.getPropertyValue('height')).toEqual("100%")
     let editorDiv : HTMLTextAreaElement = div.querySelector("#code-editor") as HTMLTextAreaElement
     expect(editorDiv.value).toEqual(ModuleEditor.defaultContent)
     modules.editor.output$.subscribe(({data}) => {
