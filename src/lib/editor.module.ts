@@ -1,7 +1,7 @@
 
 import { BehaviorSubject } from 'rxjs';
 import { render, VirtualDOM } from '@youwol/flux-view'
-import {Property, Flux,BuilderView, RenderView, ModuleFlow, Pipe, Schema, contract } from "@youwol/flux-core"
+import {Property, Flux,BuilderView, RenderView, ModuleFlux, Pipe, Schema, contract } from "@youwol/flux-core"
 import * as CodeMirror from 'codemirror'
 import * as rxjs from 'rxjs'
 import { pack } from './main';
@@ -303,7 +303,7 @@ function foo(){
             return { style: { height: "100%", width: "100%" } }
         }
     })
-    export class Module extends ModuleFlow {
+    export class Module extends ModuleFlux {
         
 
         /* This function, by default the one provided by code-mirror, is creating the editor.
