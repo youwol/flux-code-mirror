@@ -287,7 +287,7 @@ function foo(){
         displayName: "Editor",
         description: "Editor",
         resources: {
-            'technical doc': `${pack.urlCDN}/dist/docs/modules/moduleeditor.html`,
+            'technical doc': `${pack.urlCDN}/dist/docs/modules/lib_editor_module.moduleeditor.html`,
         }
     })
     @BuilderView({
