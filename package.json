@@ -51,7 +51,7 @@
     "youwol": {
         "type": "flux-pack",
         "pipeline": {
-            "name": "yw_pipeline_webpack_ts",
+            "name": "yw_pipeline_flux_pack",
             "version": "0.0.0"
         },
         "cdnDependencies": {
