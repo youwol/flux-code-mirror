@@ -100,9 +100,7 @@ function foo(){
     The configuration of the editor module allows to tune the rendering of the displayed content.
     */
     @Schema({
-        pack: pack,
-        description: "Persistent Data of Editor module",
-        namespace: ModuleEditor,
+        pack: pack
     })
     export class PersistentData {
 
@@ -326,7 +324,7 @@ function foo(){
         constructor(params) {
             super({...params, ...{helpers} })
 
-            let data0 = {configuration:this.getConfiguration<PersistentData>(), context:{}}
+            let data0 = {configuration:this.getPersistentData<PersistentData>(), context:{}}
             let rawData$ = new BehaviorSubject<{configuration: PersistentData, context: any}>(data0)
 
             this.addInput({
@@ -385,7 +383,7 @@ function foo(){
                     mdle.parsedData$.subscribe(({configCM,context}) => {
 
                         elem.querySelector(".CodeMirror") && elem.querySelector(".CodeMirror").remove()                     
-                        let editor = Module.createEditor(elem, configCM) 
+                        let editor = Module.createEditor(elem as unknown as HTMLDivElement, configCM) 
                         editor.on("changes" , () => mdle.sendContent(editor.getValue(), configCM, context))
                         mdle.sendContent(editor.getValue(),  configCM, context)
                     })
