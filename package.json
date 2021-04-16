@@ -14,7 +14,8 @@
         "build:prod": "yarn autogen && webpack --mode production",
         "test": "jest -c ./jest.config.js --rootDir .",
         "test-coverage": "jest -c ./jest.config.js --rootDir . --collect-coverage --collectCoverageFrom=./src/lib/**/*.ts ",
-        "publish-npm-public": "yarn build:prod && yarn test-coverage && yarn publish --access public"
+        "publish-npm-public": "yarn build:prod && yarn test-coverage && yarn publish --access public",
+        "upgrade-youwol": "yarn upgrade @youwol/cdn-client @youwol/flux-core @youwol/flux-view"
     },
     "dependencies": {},
     "peerDependencies": {
@@ -56,7 +57,7 @@
         },
         "cdnDependencies": {
             "@youwol/cdn-client": "0.x",
-            "@youwol/flux-core": "1.x",
+            "@youwol/flux-core": "0.x",
             "@youwol/flux-view": "0.x",
             "codemirror": "5.x",
             "lodash": "4.x",
