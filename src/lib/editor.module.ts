@@ -1,6 +1,6 @@
 
 import { BehaviorSubject } from 'rxjs';
-import { render, VirtualDOM } from '@youwol/flux-view'
+import { HTMLElement$, render, VirtualDOM } from '@youwol/flux-view'
 import {Property, Flux,BuilderView, RenderView, ModuleFlux, Pipe, Schema, contract } from "@youwol/flux-core"
 import * as CodeMirror from 'codemirror'
 import * as rxjs from 'rxjs'
@@ -377,7 +377,7 @@ function foo(){
 
         let vDOM : VirtualDOM = {
             class:'h-100 w-100',
-            connectedCallback: (elem) => {
+            connectedCallback: (elem:HTMLElement$) => {
 
                 elem.subscriptions.push(
                     mdle.parsedData$.subscribe(({configCM,context}) => {
