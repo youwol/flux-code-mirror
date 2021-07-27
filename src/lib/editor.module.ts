@@ -388,6 +388,8 @@ function foo(){
                         let editor = Module.createEditor(elem as unknown as HTMLDivElement, configCM) 
                         editor.on("changes" , () => mdle.sendContent(editor.getValue(), configCM, context))
                         mdle.sendContent(editor.getValue(),  configCM, context)
+                        let divCM =elem.querySelector(".CodeMirror") as HTMLDivElement
+                        divCM.style.height = "100%"
                     })
                 )
             }
