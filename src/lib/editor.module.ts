@@ -298,7 +298,9 @@ function foo(){
         namespace: ModuleEditor,
         render: RenderHtmlElement,
         wrapperDivAttributes: (_) => {
-            return { style: { height: "100%", width: "100%" } }
+            return { 
+                style: { height: "100%", width: "100%", padding:"3px" }
+            }
         }
     })
     export class Module extends ModuleFlux {
